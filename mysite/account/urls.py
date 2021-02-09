@@ -5,6 +5,6 @@ from . import views
 app_name = 'account'
 
 urlpatterns = [
-    #path('', views.index, name='index'),
+    path('', views.index, name='index'),
 ]
 
