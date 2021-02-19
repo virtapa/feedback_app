@@ -20,13 +20,15 @@
         </div>
       </nav>
       <div class="container">
-        <p>Thank you for your feedback</p>
-        <p><a href="{% url 'feedback:index' %}">Give more feedback</a></p>
+        <h1>Anna palautetta</h1>
+        <form action="/feedback/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
         <p><a href="{% url 'logout' %}">Logout</a></p>
-       <ol class="breadcrumb my-4">
-          {% block breadcrumb %}
-          {% endblock %}
-        </ol>
+        </form>
+
+       
         {% block content %}
         {% endblock %}
       </div>

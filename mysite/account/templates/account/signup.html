@@ -1,7 +1,7 @@
 {% extends 'account/base.html' %}
 {% block content %}
 <h2>Sign up</h2>
-<form method="post" novalidate>
+<form method="post"novalidate>
     <table>
   {% csrf_token %}
   {{ form.as_table }}

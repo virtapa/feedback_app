@@ -24,5 +24,7 @@ urlpatterns = [
     re_path('^$', account_views.home, name='home'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    #path('login/', account_views.login, name='login'),
     path('signup/', account_views.signup, name='signup'),
+    
 ]

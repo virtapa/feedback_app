@@ -4,11 +4,16 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.models import User, auth
 # Create your views here.
 
 def home(request):
     return render(request, 'account/home.html', {})
+
+#def login(request):
+    #form = UserLoginForm(request.POST)
+    #return render(request, 'account/login.html', {'form': form})
+    
 
 def signup(request):
     if request.method == 'POST':
@@ -17,7 +22,7 @@ def signup(request):
             user = form.save()
             auth_login(request, user)
             #return HttpResponseRedirect(reverse('home'))
-            return redirect('home')
+            return redirect('/')
     else:
         form = UserCreationForm()
     return render(request, 'account/signup.html', {'form': form})

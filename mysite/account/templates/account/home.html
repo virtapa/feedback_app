@@ -2,21 +2,16 @@
 
 {% block content %}
 
-<h1>Home</h1>
+<h1>Tervetuloa</h1>
 {% if user.is_authenticated %}
     <p>User logged in: {{ user }}</p>
     <p><a href="{% url 'logout' %}">Logout</a></p>
 {% else %}
-    <p>You must login first.</p>
-    <p><a href="{% url 'login' %}">Login</a></p>
-    <p><a href="{% url 'signup' %}">Create a new Account</a></p>
+    <p>Kirjaudu sisään antaaksesi palautetta</p>
+    <p><a href="{% url 'login' %}">Kirjaudu</a></p>
+    <p><a href="{% url 'signup' %}">Luo tili</a></p>
 {% endif %}
 
-<h2>Apps Gallery </h2>
-<ul>
-    <li><a href="{% url 'feedback:index' %}">Feedback</a></li>
-    <li><a href="{% url 'polls:index' %}">Polls</a></li>
-    <li><a href="{% url 'dictionary:index' %}">Dictionary</a></li>
-    <li><a href="{% url 'blog:index' %}">Blog</a></li>
-</ul>
+<h2>Anna <a href="{% url 'feedback:index' %}">palautetta</a></h2>
+
 {% endblock %}
