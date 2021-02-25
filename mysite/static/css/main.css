@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(121, 138, 194);
+  
+    text-align: center;
+    
+}
+
+.navbar-brand {
+    color: black;
+}
+
+.container {
+    width:100%;
+    height:100%;
+}
+table {
+    margin: 0 auto;
+}
+
+button {
+
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+  
+    /* usual styles */
+    padding:20px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:10%;
+  
+  }

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="icon"href="{% static 'favicon.ico' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Asiakaspalaute{% endblock %}</title>
     {% block stylesheet %}
@@ -15,11 +16,9 @@
   </head>
   <body>
     {% block body %}  <!-- HERE -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}">Asiakaspalaute</a>
+        <a href="{% url 'home' %}"> <img src="{% static 'images/burgeri.jpg' %}" width="250" height="250"alt="pasin burgeri"></a>
         </div>
-      </nav>
       <div class="container">
         
         {% block content %}
