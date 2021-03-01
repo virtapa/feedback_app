@@ -4,7 +4,7 @@
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel = 'stylesheet' href = '{% static 'css/style.css' %}'>
+  <link rel = 'stylesheet' href = '{% static 'css/main.css' %}'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title>{% block title %}Pasin Burgeri - Asiakaspalaute{% endblock %}</title>
@@ -16,19 +16,20 @@
     {% block body %}  <!-- HERE -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}">Asiakaspalaute</a>
+         <a href="{% url 'home' %}"> <img src="{% static 'images/burgeri.jpg' %}" width="250" height="250"alt="pasin burgeri"></a>
         </div>
       </nav>
       <div class="container">
         <p>Thank you for your feedback</p>
         <p><a href="{% url 'feedback:index' %}">Give more feedback</a></p>
         <p><a href="{% url 'logout' %}">Logout</a></p>
-       <ol class="breadcrumb my-4">
-          {% block breadcrumb %}
-          {% endblock %}
-        </ol>
         {% block content %}
         {% endblock %}
+        	{% block footer %}
+
+	      <footer>Pasin Burgeri  © 2021</footer>
+	      {% endblock footer %}
+      </div>
       </div>
     {% endblock body %}  <!-- AND HERE -->
   </body>

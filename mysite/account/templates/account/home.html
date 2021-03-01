@@ -3,8 +3,9 @@
 {% block content %}
 {% load static %}
 <h1>Tervetuloa</h1>
+<h2>Anna <a href="{% url 'feedback:index' %}">palautetta</a></h2>
 {% if user.is_authenticated %}
-    <p>User logged in: {{ user }}</p>
+    <p>User logged in as: {{ user }}</p>
     <p><a href="{% url 'logout' %}">Logout</a></p>
 {% else %}
     <h3>Kirjaudu sisään antaaksesi palautetta</h3>
@@ -12,6 +13,6 @@
     <button><a href="{% url 'signup' %}">Luo tili</a></button>
 {% endif %}
 
-<h2>Anna <a href="{% url 'feedback:index' %}">palautetta</a></h2>
+
 
 {% endblock %}

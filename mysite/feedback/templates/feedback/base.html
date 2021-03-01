@@ -11,9 +11,30 @@
     <title>{% block title %}Pasin Burgeri - Asiakaspalaute{% endblock %}</title>
 <style>
 </style>
-    {% block stylesheet %}{% endblock %}  <!-- HERE -->
+    {% block stylesheet %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+    {% endblock %}  <!-- HERE -->
   </head>
   <body>
+  {% block javascript %}
+  <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+      <script>
+      $(document).ready(function(){
+
+      // Initialize materialize data picker
+      $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+      $('select').formSelect();
+
+      });
+      </script>
+    {% endblock javascript %}
     {% block body %}  <!-- HERE -->
         <div class="container">
           <a href="{% url 'home' %}"> <img src="{% static 'images/burgeri.jpg' %}" width="250" height="250"alt="pasin burgeri"></a>
@@ -30,6 +51,10 @@
        
         {% block content %}
         {% endblock %}
+        	{% block footer %}
+
+	      <footer>Pasin Burgeri  © 2021</footer>
+	      {% endblock footer %}
       </div>
     {% endblock body %}  <!-- AND HERE -->
   </body>

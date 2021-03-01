@@ -10,10 +10,6 @@ from django.contrib.auth.models import User, auth
 def home(request):
     return render(request, 'account/home.html', {})
 
-#def login(request):
-    #form = UserLoginForm(request.POST)
-    #return render(request, 'account/login.html', {'form': form})
-    
 
 def signup(request):
     if request.method == 'POST':
@@ -21,14 +17,13 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            #return HttpResponseRedirect(reverse('home'))
             return redirect('/')
     else:
         form = UserCreationForm()
     return render(request, 'account/signup.html', {'form': form})
 
 
-# this is not used, just an example show how to do a custom logout
+"""this is not used, just an example show how to do a custom logout
 def logout_view(request):
     auth_logout(request)
-    return HttpResponseRedirect(reverse('home')) # Redirect to a success
+    return HttpResponseRedirect(reverse('home')) # Redirect to a success"""
