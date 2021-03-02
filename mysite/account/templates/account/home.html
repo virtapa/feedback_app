@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load static %}
-<h1>Tervetuloa</h1>
+<h1>Tervetuloa</h1> 
 <h2>Anna <a href="{% url 'feedback:index' %}">palautetta</a></h2>
 {% if user.is_authenticated %}
     <p>User logged in as: {{ user }}</p>

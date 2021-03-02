@@ -6,8 +6,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import widgets
 from django import forms
 
+
 # Create your views here.
 from .models import Feedback
+
 
 class FeedbackView(LoginRequiredMixin, CreateView):
     model = Feedback
@@ -53,6 +55,11 @@ class FeedbackForm(forms.Form):
     ideas = forms.CharField(label='Ideoita', max_length=1000,
                             widget=widgets.Textarea)
 
+                    
+
+                    
+
+
 
 
 @login_required(login_url='/login/')
@@ -81,4 +88,8 @@ def feedback(request):
         
 def thanks(request):
     return render(request, 'feedback/thanks.html', {})
+
+      
+
+    
                                                     

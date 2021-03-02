@@ -27,7 +27,7 @@ SECRET_KEY = 'y*fo*3xzxccup^hureuzka9a-k+p5^^p0(i4as9y7l4^t$lo$x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['40.127.111.170']
+ALLOWED_HOSTS =  ['127.0.0.1']
 
 # login and logout defaults
 LOGIN_REDIRECT_URL = '/'
@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'materializecssform',
+    'materializecssform' 
+    
 ]
 
 MIDDLEWARE = [
