@@ -73,29 +73,25 @@ button {
 button:hover{
 border-color: rgb(17, 16, 16);
 }
+
 @media all and (max-width:30em){
-button{
-display:block;
-margin:0.2em auto;
-}
+    button{
+    display:block;
+    margin:0.2em auto;
+    }
 }
 
-img {
+    img {
 
     margin-top: 5px;
     border-radius: 50%;
-<<<<<<< HEAD
-  }
-
+    }
 @media screen and (max-width: 540px) {
     img {
-         width: 150px;
-         height: 150px;
+        width: 150px;
+        height: 150px;
     }
     .container {
         font-size: 10px;
-    }
 }
-=======
-  }
->>>>>>> 801372587516dbf2ac5011c6970fbe6a04a59d7a
+}
