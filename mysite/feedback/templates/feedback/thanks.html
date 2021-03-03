@@ -20,14 +20,14 @@
         </div>
       </nav>
       <div class="container">
-        <p>Thank you for your feedback</p>
-        <p><a href="{% url 'feedback:index' %}">Give more feedback</a></p>
-        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p>Kiitos palautteesta</p>
+        <p><a href="{% url 'feedback:index' %}">Anna lisää palautetta</a></p>
+        <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
         {% block content %}
         {% endblock %}
         	{% block footer %}
 
-	      <footer>Pasin Burgeri  © 2021</footer>
+	      <footer>Pasin Burgeri © 2021</footer>
 	      {% endblock footer %}
       </div>
       </div>

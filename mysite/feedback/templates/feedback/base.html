@@ -25,15 +25,6 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
-      <script>
-      $(document).ready(function(){
-
-      // Initialize materialize data picker
-      $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
-      $('select').formSelect();
-
-      });
-      </script>
     {% endblock javascript %}
     {% block body %}  <!-- HERE -->
         <div class="container">
@@ -45,7 +36,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit">
-        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p><a href="{% url 'logout' %}">Kirjaudu ulos</a></p>
         </form>
 
        
@@ -53,7 +44,7 @@
         {% endblock %}
         	{% block footer %}
 
-	      <footer>Pasin Burgeri  © 2021</footer>
+	      <footer>Pasin Burgeri © 2021</footer>
 	      {% endblock footer %}
       </div>
     {% endblock body %}  <!-- AND HERE -->

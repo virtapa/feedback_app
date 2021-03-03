@@ -1,19 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
-
-# Create your models here.
-
-"""class FeedbackTopic(models.Model):
-    TOPIC_CHOICES = (
-        (1,"Ruoka"), 
-        (2,"Palvelu"), 
-        (3,"Muu"), 
-)
-    topic = models.IntegerField(choices=TOPIC_CHOICES, null=True)
-    #def __init__(self):
-        #return str(self.topic)"""
-    
+ 
 class Feedback(models.Model):
     TOPIC_CHOICES = (
         (1,"Ruoka"), 

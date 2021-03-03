@@ -16,18 +16,7 @@ class FeedbackView(LoginRequiredMixin, CreateView):
 
     success_url = 'thanks/'
 
-"""class FeedbackTopic(forms.Form):
-    TOPIC_CHOICES = ( 
-    (1,"Ruoka"), 
-    (2,"Palvelu"), 
-    (3,"Muu"), 
-)
-    topic = forms.ChoiceField(choices = TOPIC_CHOICES, label='Aihe', widget=widgets.Select)
-    def __str__(self):
-        return self.topic"""
 
-
-# manually created form
 class FeedbackForm(forms.Form):
     TOPIC_CHOICES = ( 
     (1,"Ruoka"), 
@@ -42,17 +31,15 @@ class FeedbackForm(forms.Form):
         (4,"4"),
         (5,"5"),
 )
-    #user = forms.CharField(initial={'user':'instance'}, widget=forms.HiddenInput())
     topic = forms.ChoiceField(choices=TOPIC_CHOICES, label='Aihe', widget=widgets.Select)
     grade = forms.ChoiceField(label='Arvosana 1-5', choices = GRADE_CHOICES)
 
-    good = forms.CharField(label='Hyvää', max_length=1000,
-                           widget=widgets.Textarea)
-    bad = forms.CharField(label='Huonoa', max_length=1000,
-                          widget=widgets.Textarea)
-    ideas = forms.CharField(label='Ideoita', max_length=1000,
-                            widget=widgets.Textarea)
-
+    good = forms.CharField(label='Hyvää', max_length=500,
+                           widget=forms.Textarea(attrs={'cols': '35', 'rows': '5'}))
+    bad = forms.CharField(label='Huonoa', max_length=500,
+                          widget=forms.Textarea(attrs={'cols': '35', 'rows': '5'}))
+    ideas = forms.CharField(label='Ideoita', max_length=500,
+                            widget=forms.Textarea(attrs={'cols': '35', 'rows': '5'}))
 
 
 @login_required(login_url='/login/')
@@ -63,8 +50,6 @@ def feedback(request):
         form = FeedbackForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            #user = form.cleaned_data['user']
             topic = form.cleaned_data['topic']
             grade = form.cleaned_data['grade']
             good = form.cleaned_data['good']
@@ -75,7 +60,6 @@ def feedback(request):
             # redirect to a new URL:
             return HttpResponseRedirect('thanks/')
     else:
-        # if method is 'GET' then create an empty form
         form = FeedbackForm()
         return render(request, 'feedback/index.html', {'form': form})
         
