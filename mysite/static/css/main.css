@@ -95,3 +95,13 @@ border-color: rgb(17, 16, 16);
         font-size: 10px;
 }
 }
+
+@media screen and (max-width: 340px) {
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    .container {
+        font-size: 8px;
+}
+}
