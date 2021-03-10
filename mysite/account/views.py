@@ -23,7 +23,4 @@ def signup(request):
     return render(request, 'account/signup.html', {'form': form})
 
 
-"""this is not used, just an example show how to do a custom logout
-def logout_view(request):
-    auth_logout(request)
-    return HttpResponseRedirect(reverse('home')) # Redirect to a success"""
+
